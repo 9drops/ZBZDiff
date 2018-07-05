@@ -5,11 +5,15 @@
   s.summary      = "A lightweight compare diffent library"
 
   s.description  = <<-DESC
-                    A lightweight compare diffent library
+                    A lightweight compare diffent library, md5 comparation is option
                    DESC
 
   s.homepage     = "https://github.com/9drops/txdiff"
-  s.license      = "MIT"
+  s.license = { :type => 'MIT', :text => <<-LICENSE
+         Copyright up366 2018-2020
+          LICENSE
+      }
+      
   s.author             = { "drops" => "zhanbz@qq.com" }
   s.social_media_url   = "http://www.up366.com"
 
