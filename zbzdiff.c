@@ -44,7 +44,7 @@ static int compare_reg_files(const char *file1, const char *file2) {
 } 
 
 
-int txdiff(const char *path1, const char *path2, char is_compare_file_content) {
+int zbzdiff(const char *path1, const char *path2, char is_compare_file_content) {
     char tmp1[1024], tmp2[1024];
     const char *file;
     DIR *dir, *dir2;
@@ -74,7 +74,7 @@ int txdiff(const char *path1, const char *path2, char is_compare_file_content) {
                 continue;
             snprintf(tmp1, sizeof(tmp1), "%s/%s", path1, file);
             snprintf(tmp2, sizeof(tmp2), "%s/%s", path2, file);
-            if (txdiff(tmp1, tmp2, is_compare_file_content))
+            if (zbzdiff(tmp1, tmp2, is_compare_file_content))
                 return 1;
         }
         
@@ -96,7 +96,7 @@ int main(int argc, char **argv) {
         return_msg(-1, "usage:%s path1 path2\n", argv[0]);
     }
 
-	int res = txdiff(argv[1], argv[2], 0);
+	int res = zbzdiff(argv[1], argv[2], 0);
 	printf("diff:%d\n", res);
 	return 0;
 }
